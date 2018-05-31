@@ -53,9 +53,9 @@ module.exports = {
         },
 		// Proxy config for development purposes. In production, you would configure you webserver to do something similar.
         proxy: {
-            "/app1": {
+            "/navigation": {
                 target: "http://localhost:9001",
-                pathRewrite: {"^/app1" : ""}
+                pathRewrite: {"^/navigation" : ""}
             },
             "/app2": {
                 target: "http://localhost:9002",
