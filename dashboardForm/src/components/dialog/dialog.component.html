@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="onSubmit(true)">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <span>Update Graph</span>
+    <span class="example-spacer"></span>
+    <button mat-button color="#fff" (click)="onSubmit(false)">SAVE CHANGES</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div mat-dialog-content>
+  <mat-select [(ngModel)]="chartType" placeholder="Select chart type">
+    <mat-option *ngFor="let chart of charts" [value]="chart">
+      {{ chart }}
+    </mat-option>
+  </mat-select>
+</div>

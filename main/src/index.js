@@ -7,6 +7,8 @@ async function init() {
     const globalEventDistributor = new GlobalEventDistributor();
     loadApp('navigation', '', '/navigation/singleSpaEntry.js', null, '#navigation', null);
     loadApp('dashboard', '', '/dashboard/singleSpaEntry.js', '/dashboard/store.js', '#main-content', globalEventDistributor);
+    loadApp('dashboard-form', '', '/dashboard-form/singleSpaEntry.js', '/dashboard-form/store.js', '#dashboard-form', globalEventDistributor);
+    
     singleSpa.start();
 }
 

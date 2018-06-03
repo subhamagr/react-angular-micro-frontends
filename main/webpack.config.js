@@ -61,9 +61,9 @@ module.exports = {
                 target: "http://localhost:9002",
                 pathRewrite: {"^/dashboard" : ""}
             },
-            "/app3": {
+            "/dashboard-form/": {
                 target: "http://localhost:9003",
-                pathRewrite: {"^/app3" : ""}
+                pathRewrite: {"^/dashboard-form" : ""}
             }
         }
     }
