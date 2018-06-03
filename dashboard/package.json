@@ -1,10 +1,10 @@
 {
-  "name": "react-angular-micro-frontends-navigation",
+  "name": "react-angular-micro-frontends-dashboard",
   "version": "1.0.0",
-  "description": "Static Renderer",
+  "description": "Dashboard",
   "scripts": {
     "start": "npm run watch:portal",
-    "watch:portal": "webpack-dev-server --port 9001",
+    "watch:portal": "webpack-dev-server --port 9002",
     "build:portal": "webpack -p --progress"
   },
   "keywords": [],
@@ -16,17 +16,23 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
+    "style-loader": "^0.21.0",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.2"
   },
   "dependencies": {
     "@material-ui/core": "^1.1.0",
-    "@material-ui/icons": "^1.1.0",
-    "history": "^4.7.2",
+    "highcharts": "^6.1.0",
+    "key-mirror": "^1.0.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-router-dom": "^4.2.2",
+    "react-grid-layout": "^0.16.6",
+    "react-highcharts": "^16.0.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
     "single-spa-react": "~2.4",
     "styled-components": "^3.3.0"
   }

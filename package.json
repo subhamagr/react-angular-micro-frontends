@@ -1,0 +1,25 @@
+{
+  "name": "react-angular-micro-frontends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run main & npm run navigation & npm run dashboard",
+    "go-back": "cd ..",
+    "main": "cd ./main && npm start & npm run go-back",
+    "navigation": "cd ./navigation && npm start & npm run go-back",
+    "dashboard": "cd ./dashboard && npm start & npm run go-back",
+    "dashboard-form": "cd ./dashboardForm && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subhamagr/react-angular-micro-frontends.git"
+  },
+  "author": "Subham Agarwal <me@subham.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/subhamagr/react-angular-micro-frontends/issues"
+  },
+  "homepage": "https://github.com/subhamagr/react-angular-micro-frontends#readme"
+}

@@ -6,6 +6,7 @@ import { loadApp } from './helper';
 async function init() {
     const globalEventDistributor = new GlobalEventDistributor();
     loadApp('navigation', '', '/navigation/singleSpaEntry.js', null, '#navigation', null);
+    loadApp('dashboard', '', '/dashboard/singleSpaEntry.js', '/dashboard/store.js', '#main-content', globalEventDistributor);
     singleSpa.start();
 }
 

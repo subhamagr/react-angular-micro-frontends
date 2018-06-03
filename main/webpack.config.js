@@ -57,9 +57,9 @@ module.exports = {
                 target: "http://localhost:9001",
                 pathRewrite: {"^/navigation" : ""}
             },
-            "/app2": {
+            "/dashboard/": {
                 target: "http://localhost:9002",
-                pathRewrite: {"^/app2" : ""}
+                pathRewrite: {"^/dashboard" : ""}
             },
             "/app3": {
                 target: "http://localhost:9003",

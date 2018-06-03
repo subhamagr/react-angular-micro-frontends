@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Portal app that builds the foundation of multiple SPAs",
   "scripts": {
+    "start": "npm run watch",
     "watch": "webpack-dev-server --port 9000",
     "build": "webpack -p --progress"
   },
