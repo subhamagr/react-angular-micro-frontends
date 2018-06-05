@@ -43,12 +43,6 @@
     "@angular-devkit/core" "0.5.13"
     rxjs "^6.0.0"
 
-"@angular-redux/form@^6.7.0":
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/@angular-redux/form/-/form-6.7.0.tgz#ac88e1cc619e8715aaad45cf629a93d251b5612d"
-  dependencies:
-    immutable "^3.8.1"
-
 "@angular-redux/store@^7.1.1":
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/@angular-redux/store/-/store-7.1.1.tgz#eb94e23e341b4818e55318606d0649eac2b79897"
@@ -2032,10 +2026,6 @@ decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
 
-deep-diff@^0.3.5:
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
-
 deep-equal@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
@@ -3234,10 +3224,6 @@ ignore@^3.3.5:
 image-size@~0.5.0:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
-
-immutable@^3.8.1:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
 
 import-local@^1.0.0:
   version "1.0.0"

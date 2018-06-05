@@ -6,7 +6,6 @@ import { MatDialogModule, MatSelectModule, MatButtonModule, MatToolbarModule, Ma
 import { FormsModule } from '@angular/forms';
 
 import { NgReduxModule, NgRedux } from '@angular-redux/store';
-import { NgReduxFormModule } from '@angular-redux/form';
 
 import { FormStateActions } from './store/actions/formStateActions';
 import { Globals } from "./globals.service";
@@ -20,7 +19,6 @@ enableProdMode();
 		BrowserModule,
 		FormsModule,
 		NgReduxModule,
-		NgReduxFormModule,
 		BrowserAnimationsModule,
 		MatDialogModule,
 		MatSelectModule,

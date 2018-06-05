@@ -19,8 +19,6 @@ export class DashboardForm {
 		@Inject(forwardRef(() => Globals)) private globals: Globals,
 		private ngZone: NgZone
 	) {
-		ngRedux.select<AppState>()
-			.subscribe(console.log)
 		this.subscription = ngRedux.select<FormState>('formState')
 			.subscribe(formState => {
 				this.ngZone.run(() => { this.formState = formState; })
