@@ -6,8 +6,9 @@ import { MatDialogModule, MatSelectModule, MatButtonModule, MatToolbarModule, Ma
 import { FormsModule } from '@angular/forms';
 
 import { NgReduxModule, NgRedux } from '@angular-redux/store';
+import { NgReduxFormModule } from '@angular-redux/form';
 
-import { FormStateActions } from './store';
+import { FormStateActions } from './store/actions/formStateActions';
 import { Globals } from "./globals.service";
 import { DashboardForm } from './dashboard-form.component';
 import { DialogContainer, FormDialog } from './components/dialog/dialog.component';
@@ -17,13 +18,14 @@ enableProdMode();
 @NgModule({
 	imports: [
 		BrowserModule,
+		FormsModule,
 		NgReduxModule,
+		NgReduxFormModule,
 		BrowserAnimationsModule,
 		MatDialogModule,
 		MatSelectModule,
 		MatButtonModule,
 		MatToolbarModule,
-		FormsModule,
 		MatIconModule,
 	],
 	providers: [FormStateActions, Globals],

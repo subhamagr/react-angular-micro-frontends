@@ -68,7 +68,7 @@ module.exports = function (env) {
     return {
         entry: {
             singleSpaEntry: 'src/singleSpaEntry.ts',
-            store: 'src/store.ts'
+            store: 'src/store/store.ts'
         },
         output: {
             filename: '[name].js',

@@ -9,10 +9,22 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<div mat-dialog-content>
-  <mat-select [(ngModel)]="chartType" placeholder="Select chart type">
-    <mat-option *ngFor="let chart of charts" [value]="chart">
-      {{ chart }}
-    </mat-option>
-  </mat-select>
-</div>
+<form connect="formState.form">
+  <div mat-dialog-content>
+    <mat-select ngControl ngModel name="chartType" placeholder="Select chart type">
+      <mat-option *ngFor="let chart of charts" [value]="chart">
+        {{ chart }}
+      </mat-option>
+    </mat-select>
+  </div>
+  <!-- <ng-template connectArray let-index connectArrayOf="newTypes">
+    <div [ngModelGroup]="index">
+      <mat-select ngControl ngModel name="chartType2" placeholder="Select chart type 2">
+        <mat-option *ngFor="let chart of charts" [value]="chart">
+          {{ chart }}
+        </mat-option>
+      </mat-select>
+    </div>
+  </ng-template> -->
+</form>
+

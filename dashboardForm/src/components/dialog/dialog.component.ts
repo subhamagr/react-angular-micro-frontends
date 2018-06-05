@@ -1,7 +1,6 @@
 import { Component, OnChanges, OnInit, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MatDialogRef } from '@angular/material';
-import { IAppState } from '../../store';
 
 @Component({
 	selector: 'form-dialog',
