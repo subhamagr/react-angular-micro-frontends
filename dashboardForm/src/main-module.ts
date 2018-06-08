@@ -2,11 +2,11 @@ import { Inject, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { enableProdMode } from '@angular/core';
-import { MatDialogModule, MatSelectModule, MatButtonModule, MatToolbarModule, MatIconModule } from "@angular/material";
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgReduxModule, NgRedux } from '@angular-redux/store';
 
+import { MaterialModule } from './material.module';
 import { FormStateActions } from './store/actions/formStateActions';
 import { Globals } from "./globals.service";
 import { DashboardForm } from './dashboard-form.component';
@@ -17,14 +17,10 @@ enableProdMode();
 @NgModule({
 	imports: [
 		BrowserModule,
-		FormsModule,
+		ReactiveFormsModule,
 		NgReduxModule,
 		BrowserAnimationsModule,
-		MatDialogModule,
-		MatSelectModule,
-		MatButtonModule,
-		MatToolbarModule,
-		MatIconModule,
+		MaterialModule,
 	],
 	providers: [FormStateActions, Globals],
 	declarations: [

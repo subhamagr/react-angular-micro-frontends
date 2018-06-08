@@ -9,6 +9,7 @@ import { Globals } from "./globals.service";
 @Component({
 	selector: 'dashboard-form',
 	templateUrl: 'form.template.html',
+	styleUrls: ['app.component.css'],
 })
 export class DashboardForm {
 	formState: FormState;
@@ -30,7 +31,15 @@ export class DashboardForm {
 	}
 
 	onFormSubmit(cancel = false, values = {}) {
+		const formState = this.formState;
 		this.globals.globalEventDistributor.dispatch(this.actions.showGraphDialog(false));
+		if (!cancel) {
+			if (formState.editing) {
+				this.globals.globalEventDistributor.dispatch(this.actions.updateGraph(values, formState.editing.index));
+			} else {
+				this.globals.globalEventDistributor.dispatch(this.actions.addGraph(values));
+			}
+		}
 	}
 
 }

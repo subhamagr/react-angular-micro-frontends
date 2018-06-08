@@ -1,13 +1,20 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-.example-icon {
-padding: 0 14px;
-}
-
-.example-spacer {
+.spacer {
 flex: 1 1 auto;
 }
 
 .dialog-container .mat-dialog-container {
     padding: 0;
+}
+
+.mat-form-field {
+    width: 40%;
+}
+
+.pieData .mat-form-field {
+    width: 30%;
+}
+
+.container {
+    padding: 2%;
 }

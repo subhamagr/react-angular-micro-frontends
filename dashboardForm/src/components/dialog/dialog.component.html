@@ -1,18 +1,102 @@
+
+
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <button mat-icon-button (click)="onSubmit(true)">
       <mat-icon>clear</mat-icon>
     </button>
-    <span>Update Graph</span>
-    <span class="example-spacer"></span>
-    <button mat-button color="#fff" (click)="onSubmit(false)">SAVE CHANGES</button>
+    <span>{{ editing ? 'Update' : 'Create' }} Graph</span>
+    <span class="spacer"></span>
+    <button mat-button type="submit" color="#fff" (click)="onSubmit(false)" [disabled]="chartForm.pristine || !chartForm.valid">SAVE CHANGES</button>
   </mat-toolbar-row>
 </mat-toolbar>
-
-<div mat-dialog-content>
-  <mat-select [(ngModel)]="chartType" placeholder="Select chart type">
-    <mat-option *ngFor="let chart of charts" [value]="chart">
-      {{ chart }}
-    </mat-option>
-  </mat-select>
-</div>
+<form [formGroup]="chartForm" (ngSubmit)="onSubmit()" class="container">
+  <mat-form-field>
+    <mat-select formControlName="chartType" placeholder="Select chart type" required>
+      <mat-option *ngFor="let chart of chartTypes" [value]="chart">
+        {{ chart }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <div *ngIf="!!chartForm.value.chartType">
+  
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+      
+    <h3>Chart Position</h3>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Height" formControlName="height" required>
+    </mat-form-field>
+      
+    <mat-form-field>
+      <input type="number" matInput placeholder="Width" formControlName="width" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input type="number" matInput placeholder="X" formControlName="x" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Y" formControlName="y" required>
+    </mat-form-field>
+    
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+    
+    <h3>Chart Propterties</h3>
+    
+    <mat-form-field>
+      <input matInput placeholder="Title" formControlName="title" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <textarea matInput *ngIf="chartForm.value.chartType !== 'chart'" placeholder="X-Axis Categories" formControlName="xAxisCategories"></textarea>
+    </mat-form-field>
+    
+    <mat-checkbox *ngIf="chartForm.value.chartType === 'bar'" formControlName="crosshair">Crosshair</mat-checkbox>
+    <mat-checkbox *ngIf="chartForm.value.chartType === 'bar'" formControlName="tooltipShared">Tooltip Shared</mat-checkbox>
+    
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+    
+    <div formArrayName="series">
+      <div *ngFor="let s of series.controls; let i=index" [formGroupName]="i" >
+        <h4>Series #{{i + 1}}</h4>
+        <mat-form-field>
+          <input matInput placeholder="Series Name" formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field *ngIf="chartForm.value.chartType !== 'pie'">
+          <textarea matInput placeholder="Data" formControlName="data" required></textarea>
+        </mat-form-field>
+        <button mat-button color="warn" type="button" (click)="removeSeries(i)" *ngIf="series.controls.length > 1">Remove</button>
+        <div *ngIf="chartForm.value.chartType === 'pie'">
+          <mat-checkbox  formControlName="colorByPoint">Color By Point</mat-checkbox>
+          <button mat-button color="primary" (click)="addPieSeriesData(i)" type="button">Add Data</button>
+        </div>
+        <div *ngIf="chartForm.value.chartType === 'pie'">
+          
+          <div formArrayName="pieData" class="pieData">
+            <div *ngFor="let pieData of seriesPieData(i).controls; let j=index" [formGroupName]="j">
+              <mat-form-field>
+                <input matInput placeholder="Name" formControlName="name" required>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="number" matInput placeholder="Value" formControlName="value" required>
+              </mat-form-field>
+              <mat-checkbox formControlName="selected">Selected</mat-checkbox>
+              <mat-checkbox formControlName="sliced">Sliced</mat-checkbox>
+              <button mat-button color="warn" type="button" (click)="removePieSeriesData(i, j)" *ngIf="seriesPieData(i).controls.length > 1">Remove</button>
+            </div>
+            <br />
+          </div>
+          <br />
+        </div>
+        <br />
+      </div>
+      <button mat-button color="primary" (click)="addSeries()" type="button" *ngIf="chartForm.value.chartType !== 'pie'">Add Series</button>
+    </div>
+  </div>
+</form>
